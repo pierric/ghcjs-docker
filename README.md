@@ -5,15 +5,15 @@ Dockerfile for ghcjs image
 
 Suppose we have a **app**, which has a directory structure:
 ```
-+. app
- |
- +- jsbits
- |
- +- src
- |
- +- stack.yaml
- |
- `- app.cabal
++- app
+  |
+  +- jsbits
+  |
+  +- src
+  |
+  +- stack.yaml
+  |
+  `- app.cabal
 ```
 
 We can build the app with following Dockfile.
@@ -30,4 +30,4 @@ WORKDIR /home/ghcjs/app
 RUN stack build
 ```
 
-All the compiled javascript files are in the directory `$(stack path --stack-yaml=client/stack.yaml --local-install-root)/bin/app.jsexe/`
+All the compiled javascript files are in the directory `$(stack path --local-install-root)/bin/app.jsexe/`
